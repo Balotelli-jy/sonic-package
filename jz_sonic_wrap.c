@@ -87,9 +87,10 @@ JZ_S32 JZ_SonicSetConfig(stSonicInstance* pSonicParam)
     return JZ_ErrorNone;
 }
 
+/* pInBuffer为待处理buffer首地址，u32samples为待处理帧数，处理结束后，u32samples为实际处理帧数，返回值为处理后数据buffer首地址 */
 JZ_S8* JZ_SonicProcess(void* pInBuffer, JZ_U32* u32samples)
 {
-    JZ_U32 u32FramesWritten = 0, u32InBufferFrames, u32NewSamples = 0;
+    JZ_U32 u32FramesWritten = 0, 32InBufferFrames, u32NewSamples = 0;
     
 
     if ((!pInBuffer) || (!g_stSonicConfig.s16OutBuffer))
